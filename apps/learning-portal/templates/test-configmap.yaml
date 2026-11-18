@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: learning-portal-test-config
-data:
-  environment: learning
-  purpose: pruning-demo

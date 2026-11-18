@@ -1,5 +1,5 @@
 
-replicaCount: 2
+replicaCount: 4
 
 image:
   repository: devopsportalacr2026.azurecr.io/devops-learning-portal

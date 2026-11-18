@@ -1,0 +1,19 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: learning-portal
+  labels:
+    app.kubernetes.io/name: learning-portal
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app.kubernetes.io/name: learning-portal
+  ports:
+    - name: http
+      protocol: TCP
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+{{- if and (eq .Values.service.type "NodePort") .Values.service.nodePort }}
+      nodePort: {{ .Values.service.nodePort }}
+{{- end }}

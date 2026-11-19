@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: devopsportalacr2026.azurecr.io/devops-learning-portal
-  tag: "1.0.0"
+  tag: "6c00aa79d716e4ad51437c60b6eeef5c3b04e269"
   pullPolicy: IfNotPresent
 
 service:

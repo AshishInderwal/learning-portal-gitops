@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: learning-portal-parent
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/AshishInderwal/learning-portal-gitops.git
+    targetRevision: HEAD
+    path: environments/children
+    directory:
+      recurse: false
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+
+  syncPolicy:
+    syncOptions:
+      - Validate=true
